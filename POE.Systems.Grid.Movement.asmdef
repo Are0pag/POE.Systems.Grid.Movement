@@ -1,0 +1,23 @@
+{
+    "name": "POE.Systems.Grid.Movement",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:4692c0319cb97434687fea4df27cb9f8",
+        "GUID:2b2277e6ef464a8418a3c0c9d600867c",
+        "GUID:83f0dae0f5896b44db30f476d1b78d79",
+        "GUID:4358c4dce9c7ae2468c81096b356debe",
+        "GUID:8493ac436d9f4b143b0f2fc457f3e145",
+        "GUID:9bce03f4743f41a1acc9e9511cdc876e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
