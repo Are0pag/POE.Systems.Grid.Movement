@@ -1,6 +1,4 @@
-﻿using Scripts.Services.EventBus;
-
-namespace Scripts.Systems.GridMovement
+﻿namespace Scripts.Systems.GridMovement
 {
     internal interface IGridHandle : IGidMovementSubscriber
     {
