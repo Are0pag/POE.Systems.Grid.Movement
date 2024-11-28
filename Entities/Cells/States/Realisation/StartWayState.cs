@@ -6,7 +6,7 @@ namespace Scripts.Systems.GridMovement
     {
         internal override void OnMouseOver(MovableCell cell) {
             cell.StateProvider.SwitchState(cell.StateProvider.IdleState, cell);
-            EventBus.RaiseEvent<ITraceHandle>(h => h.OnPlayerSelectCell(cell));
+            EventBus<IGidMovementSubscriber>.RaiseEvent<ITraceHandle>(h => h.OnPlayerSelectCell(cell));
         }
     }
 }
