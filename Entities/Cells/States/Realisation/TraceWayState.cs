@@ -6,7 +6,7 @@ namespace Scripts.Systems.GridMovement
     {
         internal override void OnMouseEnter(MovableCell cell) {
             base.OnMouseEnter(cell);
-            EventBus.RaiseEvent<ITraceHandle>(h => h.OnPlayerContinueMovableItemPass(cell));
+            EventBus<IGidMovementSubscriber>.RaiseEvent<ITraceHandle>(h => h.OnPlayerContinueMovableItemPass(cell));
         }
     }
 }

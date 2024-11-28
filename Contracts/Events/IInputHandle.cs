@@ -2,7 +2,7 @@
 
 namespace Scripts.Systems.GridMovement
 {
-    internal interface IInputHandle : IGlobalSubscriber
+    internal interface IInputHandle : IGidMovementSubscriber
     {
         void OnMouseButtonDown();
         void OnMouseButtonUp();

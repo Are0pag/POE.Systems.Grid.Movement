@@ -7,10 +7,10 @@ namespace Scripts.Systems.GridMovement
     {
         protected virtual void Update() {
             if (Input.GetMouseButtonDown(0)) 
-                EventBus.RaiseEvent<IInputHandle>(h => h.OnMouseButtonDown());
+                EventBus<IGidMovementSubscriber>.RaiseEvent<IInputHandle>(h => h.OnMouseButtonDown());
 
             if (Input.GetMouseButtonUp(0)) 
-                EventBus.RaiseEvent<IInputHandle>(h => h.OnMouseButtonUp());
+                EventBus<IGidMovementSubscriber>.RaiseEvent<IInputHandle>(h => h.OnMouseButtonUp());
         }
     }
 }

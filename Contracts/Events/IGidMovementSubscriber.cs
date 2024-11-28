@@ -1,6 +1,6 @@
 namespace Scripts.Systems.GridMovement
 {
-    public interface IGidMovementSubscriber
+    internal interface IGidMovementSubscriber
     {
         
     }

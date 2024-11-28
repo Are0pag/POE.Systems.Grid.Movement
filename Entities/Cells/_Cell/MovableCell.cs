@@ -13,13 +13,13 @@ namespace Scripts.Systems.GridMovement
 
 
         protected virtual void OnEnable() {
-            EventBus.Subscribe(this);
+            EventBus<IGidMovementSubscriber>.Subscribe(this);
             StateProvider = new StateProvider();
             StateProvider.SwitchState(StateProvider.IdleState, this);
         }
 
         protected virtual void OnDisable() {
-            EventBus.Unsubscribe(this);
+            EventBus<IGidMovementSubscriber>.Unsubscribe(this);
         }
 
         protected virtual void OnMouseEnter() => StateProvider?.CurrentState?.OnMouseEnter(this);

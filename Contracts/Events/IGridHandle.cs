@@ -2,7 +2,7 @@
 
 namespace Scripts.Systems.GridMovement
 {
-    internal interface IGridHandle : IGlobalSubscriber
+    internal interface IGridHandle : IGidMovementSubscriber
     {
         void OnInput();
         void OnMovableItemDefine();

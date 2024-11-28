@@ -17,19 +17,19 @@ namespace Scripts.Systems.GridMovement
             _gridContent = gridContent;
         }
         
-        protected virtual void OnEnable() => EventBus.Subscribe(this);
-        protected virtual void OnDisable() => EventBus.Unsubscribe(this);
+        protected virtual void OnEnable() => EventBus<IGidMovementSubscriber>.Subscribe(this);
+        protected virtual void OnDisable() => EventBus<IGidMovementSubscriber>.Unsubscribe(this);
 
         void IInputHandle.OnMouseButtonDown() {
             if (_trace == null)
-                EventBus.RaiseEvent<IGridHandle>(h => h.OnInput());
+                EventBus<IGidMovementSubscriber>.RaiseEvent<IGridHandle>(h => h.OnInput());
         }
 
         void IInputHandle.OnMouseButtonUp() {
             if (_trace is not { Executing: false })
                 return;
 
-            EventBus.RaiseEvent<IGridHandle>(h => h.OnStopTracing());
+            EventBus<IGidMovementSubscriber>.RaiseEvent<IGridHandle>(h => h.OnStopTracing());
             if (_trace.Commands.Count == _trace.CurrentlyMoving.GridMovementStats.StepCount) {
                 _trace.IsComplete = true;
                 StartMoving();
@@ -47,7 +47,7 @@ namespace Scripts.Systems.GridMovement
 
             _trace = new MoveTrace(heroOnCell);
             _traceCorrector.InitRuntime(_trace);
-            EventBus.RaiseEvent<IGridHandle>(h => h.OnMovableItemDefine());
+            EventBus<IGidMovementSubscriber>.RaiseEvent<IGridHandle>(h => h.OnMovableItemDefine());
         }
 
         void ITraceHandle.OnPlayerContinueMovableItemPass(IMovableGridCell cell) {
