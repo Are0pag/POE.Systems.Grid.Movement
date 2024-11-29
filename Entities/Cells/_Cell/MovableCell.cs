@@ -7,6 +7,7 @@ namespace Scripts.Systems.GridMovement
     internal class MovableCell : Cell, IMovableGridCell, IGridHandle
     {
         static internal bool IsMouseOnGrid;
+        
         [field: SerializeField] public CellDisplay Display { get; protected set; }
         internal protected StateProvider StateProvider { get; protected set; }
         Vector3 IMovableGridCell.Position => gameObject.transform.position;

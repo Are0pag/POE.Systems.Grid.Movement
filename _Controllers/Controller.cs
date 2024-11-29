@@ -30,7 +30,7 @@ namespace Scripts.Systems.GridMovement
                 return;
 
             EventBus<IGidMovementSubscriber>.RaiseEvent<IGridHandle>(h => h.OnStopTracing());
-            if (_trace.Commands.Count == _trace.CurrentlyMoving.GridMovementStats.StepCount) {
+            if (IsWayComplete()) {
                 _trace.IsComplete = true;
                 StartMoving();
             }
@@ -45,12 +45,12 @@ namespace Scripts.Systems.GridMovement
             if (heroOnCell == null)
                 return;
 
-            _trace = new MoveTrace(heroOnCell);
+            _trace = GetMoveTrace(heroOnCell);
             _traceCorrector.InitRuntime(_trace);
             EventBus<IGidMovementSubscriber>.RaiseEvent<IGridHandle>(h => h.OnMovableItemDefine());
         }
 
-        void ITraceHandle.OnPlayerContinueMovableItemPass(IMovableGridCell cell) {
+        public virtual void OnPlayerContinueMovableItemPass(IMovableGridCell cell) {
             var desiredStep = cell.Position;
 
             if (_traceCorrector.IsItReturnToStartInput(desiredStep)) {
@@ -80,6 +80,14 @@ namespace Scripts.Systems.GridMovement
                 return;
 
             _trace.AddStep(cell);
+        }
+
+        protected virtual bool IsWayComplete() {
+            return _trace.Commands.Count == _trace.CurrentlyMoving.GridMovementStats.StepCount;
+        }
+
+        protected virtual MoveTrace GetMoveTrace(IGridMovable heroOnCell) {
+            return new MoveTrace(heroOnCell);
         }
 
         protected virtual async void StartMoving() {

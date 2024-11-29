@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 #if UNITY_EDITOR
 using Scripts.Tools.CustomEdit;
 #endif
@@ -7,7 +6,9 @@ using Scripts.Tools.CustomEdit;
 namespace Scripts.Systems.GridMovement
 {
 #if UNITY_EDITOR
-    [CreateAssetMenu(fileName = nameof(GridMovementStats), menuName = DirectoryNames.STATS_DATA_PATH + nameof(GridMovementStats))]
+    [CreateAssetMenu(
+        fileName = nameof(GridMovementStats), 
+        menuName = DirectoryNames.GRID_STATS_DATA_PATH + nameof(GridMovementStats))]
 #endif
     public class GridMovementStats : ScriptableObject
     {
