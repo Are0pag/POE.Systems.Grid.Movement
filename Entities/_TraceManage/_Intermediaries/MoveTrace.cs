@@ -39,8 +39,8 @@ namespace Scripts.Systems.GridMovement
             if (cell.Position == _startPoint)
                 return;
 
-            var command = new MoveCommand(CurrentlyMoving, cell.Position, GetStartPositionForCommand());
-            var displayCommand = new DisplayCommand(cell, CurrentlyMoving.GridMovementStats.StepCount - Commands.Count);
+            var command = GetMoveCommand(cell);
+            var displayCommand = GetDisplayCommand(cell);
 
             LastCommand = new InputCommand(command, displayCommand);
             Commands.Add(LastCommand);
@@ -55,7 +55,16 @@ namespace Scripts.Systems.GridMovement
         }
 
         internal virtual void UndoOperation() {
-            foreach (var command in Commands) command.DisplayCommand.Undo();
+            foreach (var command in Commands) 
+                command.DisplayCommand.Undo();
+        }
+
+        protected virtual MoveCommand GetMoveCommand(IMovableGridCell cell) {
+            return new MoveCommand(CurrentlyMoving, cell.Position, GetStartPositionForCommand());
+        }
+
+        protected virtual DisplayCommand GetDisplayCommand(IMovableGridCell cell) {
+            return new DisplayCommand(cell, CurrentlyMoving.GridMovementStats.StepCount - Commands.Count);
         }
 
 

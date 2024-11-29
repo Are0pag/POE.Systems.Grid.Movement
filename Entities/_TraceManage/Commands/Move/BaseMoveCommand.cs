@@ -13,10 +13,10 @@ namespace Scripts.Systems.GridMovement
             StartPosition = startPosition;
         }
 
-        internal protected Vector3 TargetPosition { get; protected set; }
-        internal protected Vector3 StartPosition { get; protected set; }
-
         internal abstract UniTask Execute();
         internal abstract UniTask Undo();
+        
+        internal protected Vector3 TargetPosition { get; protected set; }
+        internal protected Vector3 StartPosition { get; protected set; }
     }
 }

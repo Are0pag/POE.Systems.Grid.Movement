@@ -10,7 +10,7 @@ namespace Scripts.Systems.GridMovement
         protected readonly Dictionary<DirectionsOfGrid, Vector3> _directions;
         protected MoveTrace _moveTrace;
 
-        public TraceCorrector(DirectionCalculator directionCalculator) {
+        internal TraceCorrector(DirectionCalculator directionCalculator) {
             _directions = directionCalculator.GetGridDirections();
         }
 
