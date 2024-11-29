@@ -5,13 +5,20 @@
 ![Static Badge](https://img.shields.io/badge/Engine-Unity%206000.0.24f1-brightgreen)
 ![Static Badge](https://img.shields.io/badge/Version-v1.0%20(Alfa)-blue)
 ![Static Badge](https://img.shields.io/badge/C%23-violet)
+![Static Badge](https://img.shields.io/badge/OOP-violet "# Object-Oriented programming")
 ![Static Badge](https://img.shields.io/badge/TBS-inactive "Turn-Based Strategy")
 ![Static Badge](https://img.shields.io/badge/CCG-inactive "Collectable Card Game")
 ![Static Badge](https://img.shields.io/badge/GBG-inactive "Grid Based Game")
 
 ### POE.Systems.Grid.Movement Module
 #### Requarements: 
+- [POE.Systems.Grid.Generation Module](https://github.com/Are0pag/GridGeneration)
+- // Behavioral
 - [Services.EventBus](https://github.com/Are0pag/Services.EventBus)
+- [POE.Tools Module](https://github.com/Are0pag/GridGeneration](https://github.com/Are0pag/POE.Tools))
+- Zenject
+- UniTask
 
-Code Style
-Module Structure
+#### Description:
+
+#### [Code Style](https://github.com/Are0pag/POE.CodeStyle)
