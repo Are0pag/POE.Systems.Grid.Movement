@@ -45,6 +45,7 @@ namespace Scripts.Systems.GridMovement
             if (heroOnCell == null)
                 return;
 
+            _gridContent.SelectedHero = heroOnCell;
             _trace = GetMoveTrace(heroOnCell);
             _traceCorrector.InitRuntime(_trace);
             EventBus<IGidMovementSubscriber>.RaiseEvent<IGridHandle>(h => h.OnMovableItemDefine());

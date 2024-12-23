@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Scripts.Systems.GridMovement
 {
+    [SelectionBase]
     public abstract class Cell : MonoBehaviour
     {
         [SerializeField] protected InterfaceRef<IGridCellData> _сellType;
