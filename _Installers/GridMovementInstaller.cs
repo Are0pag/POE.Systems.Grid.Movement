@@ -9,7 +9,7 @@ namespace Scripts.Systems.GridMovement
         [SerializeField] private Config _config;
 
         public override void InstallBindings() {
-            Container.Bind<GridContent>().AsSingle();
+            Container.Bind<GridContent>().To<GridContentTargetNotifying>().AsSingle();
 
             Container.Bind<Config>().FromInstance(_config).AsSingle();
             Container.Bind<ImpactCalculator>().AsSingle();

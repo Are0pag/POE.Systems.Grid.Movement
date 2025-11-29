@@ -39,10 +39,10 @@ namespace Scripts.Systems.GridMovement
             if (cell.Position == _startPoint)
                 return;
 
-            var command = GetMoveCommand(cell);
+            var moveCommand = GetMoveCommand(cell);
             var displayCommand = GetDisplayCommand(cell);
 
-            LastCommand = new InputCommand(command, displayCommand);
+            LastCommand = new InputCommand(moveCommand, displayCommand);
             Commands.Add(LastCommand);
         }
 

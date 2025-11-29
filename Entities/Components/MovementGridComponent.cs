@@ -10,7 +10,8 @@ namespace Scripts.Systems.GridMovement
         [field: SerializeField] public GridMovementStats GridMovementStats { get; protected set; }
 
         public virtual async UniTask PassWayAsync(List<Vector3> points, float timeToPassingOneGrid) {
-            foreach (var point in points) await MoveAsync(point, timeToPassingOneGrid);
+            foreach (var point in points) 
+                await MoveAsync(point, timeToPassingOneGrid);
         }
     }
 }

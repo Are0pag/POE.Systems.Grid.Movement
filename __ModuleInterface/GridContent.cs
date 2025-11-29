@@ -3,10 +3,11 @@ using UnityEngine;
 
 namespace Scripts.Systems.GridMovement
 {
-    public class GridContent
+    // клавиши для клинта
+    public class GridContent // : KeyWord
     {
         public Dictionary<IGridMovable, Vector3> HeroesPositions { get; set; } = new();
-        public IGridMovable SelectedHero { get; set; }
+        public virtual IGridMovable SelectedHero { get; set; }
         public bool IsMouseOnGrid => MovableCell.IsMouseOnGrid;
     }
 }
